@@ -1,8 +1,10 @@
 @extends('layouts.main')
 
 
- @section('main')
-<h2><a href="#">Home</a></h2>
-    <a href="#">Portfolio</a>
-
+@section('main')
+    <div class="container">
+        <div class="d-flex justify-content-center my-5 gap-3">
+            <a href="{{ route('students.index') }}">Visualizza studenti</a>
+        </div>
+    </div>
 @endsection

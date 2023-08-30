@@ -11,7 +11,9 @@
 
 <body>
     <main>
-        @yield('main')
+        <div class="container">
+            @yield('main')
+        </div>
     </main>
 </body>
 
