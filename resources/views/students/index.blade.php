@@ -20,13 +20,18 @@
     </div>
 
     <section id="students-list">
-        <h1 class="mb-4">i prossimi geni del XXI secolo</h1>
-        <ul class="ps-0">
+        <h1 class="mb-4 text-center">I Prossimi Geni del XXI secolo</h1>
+        <div class="row">
             @foreach ($students as $student)
-                <a class="nav-link" href="{{ route('students.show', $student) }}">
-                    <li class="text-dark list-group-item mb-1">{{ $student->name }} {{ $student->surname }}</li>
-                </a>
+                <div class="col-md-3">
+                    <div class="card mb-4 bg-secondary text-white">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ $student->name }} {{ $student->surname }}</h5>
+                            <a href="{{ route('students.show', $student) }}" class="btn btn-success">Dettagli</a>
+                        </div>
+                    </div>
+                </div>
             @endforeach
-        </ul>
+        </div>
     </section>
 @endsection
