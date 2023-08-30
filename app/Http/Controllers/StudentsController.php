@@ -10,9 +10,11 @@ class StudentsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $students = Student::all();
+        $filter = $request->query('filter');
+        if ($filter) $students = Student::where('name', 'LIKE', "%$filter%")->get();
+        else $students = Student::all();
         return view('students.index', compact('students'));
     }
 
@@ -21,7 +23,8 @@ class StudentsController extends Controller
      */
     public function create()
     {
-        return view('students.create');
+        $student = new Student();
+        return view('students.create', compact('student'));
     }
 
     /**

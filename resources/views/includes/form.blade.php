@@ -1,26 +1,25 @@
-<form method="POST" action="{{ route('students.store') }}">
-  @csrf
+    @csrf
 
-  <div>
-    <label for="name">Nome: </label>
-    <input class="form-control @error('name') is-invalid @enderror" type="text" id="name" name="name">
-    @error('name')
-      <div class="invalid-feedback">
-        {{ $message }}
+    <div class="row">
+      <div class="col-12">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="name" name="name" required value="{{ $student->name }}">
+        </div>
       </div>
-    @enderror
-  </div>
-
-  <div class="mt-3">
-    <label for="surname">Cognome: </label>
-    <input class="form-control @error('surname') is-invalid @enderror" type="text" id="surname" name="surname">
-    @error('surname')
-      <div class="invalid-feedback">
-        {{ $message }}
+      <div class="col-12">
+        <div class="mb-3">
+          <label for="surname" class="form-label">Cognome</label>
+          <input type="text" class="form-control" id="surname" name="surname" required
+            value="{{ $student->surname }}">
+        </div>
       </div>
-    @enderror
-  </div>
+      <div class="col-1">
+        <button type="submit" class="btn btn-success">Salva</button>
+      </div>
+      <div class="col-1">
+        <button type="reset" class="btn btn-warning">Reset</button>
+      </div>
+    </div>
 
-  <button class="mt-3 btn btn-primary">Invia</button>
-
-</form>
+    </form>
