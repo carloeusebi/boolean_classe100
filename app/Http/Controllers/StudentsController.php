@@ -32,6 +32,16 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            [
+                'name' => 'required|string',
+                'surname' => 'required|string'
+            ],
+            [
+                'name.required' => 'Il nome è obbligatorio',
+                'surname.required' => 'Il cognome è obbligatorio'
+            ]
+        );
         $data = $request->all();
         $student = new Student;
         $student->name = $data['name'];
@@ -62,6 +72,17 @@ class StudentsController extends Controller
      */
     public function update(Request $request, Student $student)
     {
+        $request->validate(
+            [
+                'name' => 'required|string',
+                'surname' => 'required|string'
+            ],
+            [
+                'name.required' => 'Il nome è obbligatorio',
+                'surname.required' => 'Il cognome è obbligatorio'
+            ]
+        );
+
         $data = $request->all();
         $student->update($data);
         return to_route('students.show', $student);
