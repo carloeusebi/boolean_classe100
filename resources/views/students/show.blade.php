@@ -1,19 +1,22 @@
 @extends('layouts.main')
 
 @section('main')
-    <p>io sono il grandissimo {{ $student->surname }} {{ $student->name }}</p>
-    <a class="btn btn-warning" href="{{ route('students.edit', $student) }}">Modifica</a>
-    <form class="d-inline" method="POST" action="{{ route('students.destroy', $student) }}">
-        @csrf
-        @method('DELETE')
-    </form>
+    <div class="mt-5">
 
+        <p>io sono il grandissimo {{ $student->surname }} {{ $student->name }}</p>
+        <a class="btn btn-warning" href="{{ route('students.edit', $student) }}">Modifica</a>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Elimina {{ $student->surname }} {{ $student->name }}
+        </button>
+        <form class="d-inline" method="POST" action="{{ route('students.destroy', $student) }}">
+            @csrf
+            @method('DELETE')
+        </form>
+
+    </div>
 
     <!-- Button trigger modal -->
     {{-- DELETE MODAL --}}
-    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Elimina {{ $student->surname }} {{ $student->name }}
-    </button>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
