@@ -1,4 +1,3 @@
-<form method="POST" action="{{ route('students.store') }}">
     @csrf
 
     <div class="row">
@@ -24,4 +23,4 @@
         </div>
     </div>
 
-</form>
+    </form>
