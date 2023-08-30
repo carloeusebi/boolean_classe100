@@ -8,10 +8,6 @@
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Elimina {{ $student->surname }} {{ $student->name }}
         </button>
-        <form class="d-inline" method="POST" action="{{ route('students.destroy', $student) }}">
-            @csrf
-            @method('DELETE')
-        </form>
 
     </div>
 
@@ -31,7 +27,11 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chudi</button>
-                    <button type="button" class="btn btn-danger">Elimina</button>
+                    <form class="d-inline" method="POST" action="{{ route('students.destroy', $student) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Elimina</button>
+                    </form>
                 </div>
             </div>
         </div>
