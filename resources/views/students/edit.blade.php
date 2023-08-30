@@ -14,13 +14,15 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="name" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
+                        <input type="text" class="form-control" id="name" name="name" required
+                            value="{{ $student->name }}">
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="mb-3">
-                        <label for="surname" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="surname" name="surname" required>
+                        <label for="surname" class="form-label">Cognome</label>
+                        <input type="text" class="form-control" id="surname" name="surname" required
+                            value="{{ $student->surname }}">
                     </div>
                 </div>
                 <div class="col-1">
