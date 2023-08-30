@@ -5,4 +5,14 @@
         <a href="{{ route('home') }}">Torna alla home</a>
         <a href="{{ route('students.create') }}">Crea un nuovo paziente</a>
     </div>
+
+    <section id="students-list">
+        <ul>
+            @foreach ($students as $student)
+                <a href="{{ route('students.show', $student) }}">
+                    <li>{{ $student->name }} {{ $student->surname }}</li>
+                </a>
+            @endforeach
+        </ul>
+    </section>
 @endsection
