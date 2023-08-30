@@ -1,9 +1,12 @@
 @extends('layouts.main')
 
 @section('main')
-    <div class="mt-5">
-
-        <p>io sono il grandissimo {{ $student->surname }} {{ $student->name }}</p>
+    <div class="mt-5 text-center">
+        <h1>io sono il grandissimo <strong>{{ $student->surname }}
+                {{ $student->name }}</strong></h1>
+        <p>se vuoi contattarmi per fare affidamento sui miei {{ $student->age }} anni
+            di esperienza sei autorizzato a
+            contattarmi a questa email: <a href="#">{{ $student->email }}</a></p>
         <a class="btn btn-warning" href="{{ route('students.edit', $student) }}">Modifica</a>
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Elimina {{ $student->surname }} {{ $student->name }}
