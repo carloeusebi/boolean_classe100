@@ -7,7 +7,7 @@
         <h1 class="text-center">Modifica Studente</h1>
         <a class="btn btn-secondary my-3" href="{{ route('students.index') }}">Torna Indietro</a>
 
-        <form method="FORM" action="{{ route('students.update', $student) }}">
+        <form method="POST" action="{{ route('students.update', $student) }}">
             @csrf
             @method('PUT')
             <div class="row">
