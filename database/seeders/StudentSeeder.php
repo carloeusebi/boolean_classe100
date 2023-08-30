@@ -19,6 +19,9 @@ class StudentSeeder extends Seeder
             $student = new Student();
             $student->name = $faker->firstName();
             $student->surname = $faker->lastName();
+            $student->email = $faker->email();
+            $student->age = $faker->numberBetween(20, 30);
+            $student->class = 100;
             $student->save();
         }
     }
