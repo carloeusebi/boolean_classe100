@@ -1,10 +1,19 @@
 @extends('layouts.main')
 
 @section('main')
-    <div class="d-flex justify-content-between my-5">
+    <div class="d-flex justify-content-between my-5 align-items-center">
         <a class="btn btn-outline-primary" href="{{ route('home') }}">Torna alla home</a>
+        <nav class="navbar bg-light">
 
-        <a class="btn btn-outline-primary"href="{{ route('students.create') }}">Crea un nuovo
+            <form class="d-flex" role="search">
+                @csrf
+                <input class="form-control me-2" type="text" name="filter" placeholder="A chi sei interessato?...">
+                <button class="btn btn-outline-success" type="submit">A chi sei interessato?...</button>
+            </form>
+
+        </nav>
+
+        <a class="btn btn-outline-primary "href="{{ route('students.create') }}">Crea un nuovo
             studente</a>
 
 
