@@ -29,15 +29,22 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $student = new Student;
+        $student->name = $data['name'];
+        $student->surname = $data['surname'];
+        $student->save();
+
+        return to_route('students.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Student $student)
     {
-        //
+
+        return view('students.show', compact('student'));
     }
 
     /**
